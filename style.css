@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@font-face {
+  font-family: 'Drip';
+  src: url('fonts/Drip.ttf') format('truetype'),
+    url('fonts/Drip.woff2') format('woff2'),
+    url('fonts/Drip.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html, body, section {
+  block-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  /* Rolagem suave */
+  overflow-y: scroll;
+  /* Garante que a barra de rolagem esteja sempre visível */
+}
+
+body {
+  background-color: #000;
+  color: white;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Drip', system-ui, sans-serif;
+}
+
+p {
+  font-family: 'Varela Round';
+
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  /* Muda para "normal" para uma rolagem mais suave */
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+
+section {
+  background-image: url('assets/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.glow-text {
+  animation: glow-pulse 4.5s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 255, 255, 1),
+      0 0 40px rgba(255, 255, 255, 0.8),
+      0 0 60px rgba(255, 255, 255, 0.6),
+      0 0 80px rgba(255, 255, 255, 0.4);
+  }
+
+  100% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+
+/* Aplica a animação ao texto */
+.float-text {
+  animation: float-effect 20s infinite ease-in-out;
+}
+
+
+/* Efeito de brilho pulsante */
+.glowing-lucas {
+  position: relative;
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.6),
+    /* Azul inicial */
+    0 0 40px rgba(59, 130, 246, 0.4),
+    0 0 60px rgba(59, 130, 246, 0.2);
+  animation: glow-lucas 3s infinite ease-in-out;
+}
+
+@keyframes glow-lucas {
+  0% {
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.6),
+      /* Azul inicial */
+      0 0 40px rgba(59, 130, 246, 0.4),
+      0 0 60px rgba(59, 130, 246, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(147, 51, 234, 0.8),
+      /* Roxo no meio */
+      0 0 60px rgba(147, 51, 234, 0.6),
+      0 0 90px rgba(147, 51, 234, 0.4);
+  }
+
+  100% {
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.6),
+      /* Azul final */
+      0 0 40px rgba(59, 130, 246, 0.4),
+      0 0 60px rgba(59, 130, 246, 0.2);
+  }
+}
+
+
+/* Estilizando a barra de rolagem para WebKit */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Largura da barra de rolagem vertical */
+  height: 12px;
+  /* Altura da barra de rolagem horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  /* Cor de fundo da trilha da barra de rolagem */
+  border-radius: 10px;
+  /* Borda arredondada da trilha */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  /* Cor da parte deslizante da barra de rolagem */
+  border-radius: 10px;
+  /* Borda arredondada do polegar */
+  border: 3px solid #000;
+  /* Borda ao redor da parte deslizante */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Cor da parte deslizante ao passar o mouse */
+}
+
+.hover-glow {
+  position: relative;
+  display: inline-block;
+  color: #3b82f6;
+  /* Azul inicial */
+  transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.hover-glow:hover {
+  color: #9333ea;
+  /* Roxo no hover */
+  text-shadow: 0 0 10px rgba(147, 51, 234, 0.7),
+    /* Brilho roxo */
+    0 0 20px rgba(147, 51, 234, 0.5),
+    0 0 30px rgba(147, 51, 234, 0.3);
+}
